@@ -2867,7 +2867,7 @@ input[type=submit]:hover {
 
 @media only screen and (max-width: 575px) {
     .back-to-top.show {
-        bottom: 10px;
+        bottom: 80px;
         right: 10px
     }
 }
@@ -2880,7 +2880,7 @@ input[type=submit]:hover {
 
 @media only screen and (max-width: 575px) {
     .back-to-top.show:hover {
-        bottom: 10px
+        bottom: 70px
     }
 }
 
@@ -3163,6 +3163,7 @@ button.axil-btn.wishlist-btn:hover:before {
     .slick-layout-wrapper--20 .slick-list {
         margin: -20px -10px
     }
+
     .header-top-section {
         display: none;
     }
@@ -7130,6 +7131,18 @@ button.axil-btn.wishlist-btn:hover:before {
     .header-style-2 .axil-header-top .axil-search {
         display: none
     }
+
+    /* down-sticky */
+    .axil-mainmenu.axil-sticky {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 5;
+        background-color: var(--color-white);
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .1);
+        transition: var(--transition)
+    }
 }
 
 .header-style-2 .axil-header-top .axil-search .icon {
@@ -7282,16 +7295,16 @@ button.axil-btn.wishlist-btn:hover:before {
     }
 }
 
-.axil-mainmenu.axil-sticky {
+/* .axil-mainmenu.axil-sticky {
     position: fixed;
-    top: 0;
+    bottom: 0;
     right: 0;
     left: 0;
     z-index: 5;
     background-color: var(--color-white);
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .1);
     transition: var(--transition)
-}
+} */
 
 .axil-mainmenu.axil-sticky .mainmenu>li>a {
     height: 80px;
@@ -7331,10 +7344,28 @@ button.axil-btn.wishlist-btn:hover:before {
     }
 }
 
+/* for test */
+
+@media only screen and (min-width: 767px) and (max-width: 1900px) {
+    .axil-mainmenu.axil-sticky {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 5;
+        background-color: var(--color-white);
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .1);
+        transition: var(--transition)
+    }
+}
+
+
+
 @media only screen and (max-width: 1199px) {
     .header-style-1 .mainmenu>li {
         margin: 0 13px
     }
+
 }
 
 .header-style-1 .axil-mainmenu.axil-sticky {
@@ -7949,7 +7980,12 @@ button.axil-btn.wishlist-btn:hover:before {
 
 @media only screen and (max-width: 991px) {
     .axil-mainmenu.aside-category-menu {
-        padding: 10px 0
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
     }
 }
 
@@ -8003,6 +8039,22 @@ button.axil-btn.wishlist-btn:hover:before {
     color: var(--color-white);
     font-size: 18px
 }
+
+/* navbar soluition here*/
+
+@media only screen and (min-width: 1200px)and (max-width: 1900px) {
+    .sub-menu {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .header-department:hover .sub-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+}
+
 
 @media only screen and (max-width: 991px) {
     .axil-mainmenu.aside-category-menu .header-department .header-department-text .icon {
@@ -8538,15 +8590,18 @@ button.axil-btn.wishlist-btn:hover:before {
     .axil-mobile-toggle {
         margin-left: 18px
     }
+
     .icon-hidden {
         display: none;
     }
+
     .dropdown-last {
         display: none;
     }
 }
 
-.department-title, .department-title i{
+.department-title,
+.department-title i {
     color: var(--color-black);
     font-weight: 500
 }
@@ -12371,7 +12426,17 @@ body.open .closeMask {
     padding: 11px 40px
 }
 
-.axil-signin-area {
+.header-sign {
+    background-color: var(--color-primary);
+    color: white;
+    ;
+}
+
+.text-color {
+    color: #770BCC;
+}
+
+/* .axil-signin-area {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -12380,20 +12445,126 @@ body.open .closeMask {
     height: 100%;
     width: 100%;
     overflow: hidden
-}
+} */
 
 .signin-header {
-    position: fixed;
+    /* position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    padding: 40px 100px;
+    right: 0; */
+    padding: 10px 0px;
     z-index: 1
 }
 
+/* profile section */
+
+.emp-profile {
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 40px;
+    border-radius: 0.5rem;
+    background: #f1f1f1;
+    max-height: 400px;
+    max-width: 900px;
+}
+
+.form-group .textArea {
+    height: 100px;
+}
+
+.table td {
+    padding: 15px;
+}
+
+.table th {
+    padding: 15px;
+}
+
+.font-btn {
+    font-weight: 500;
+}
+
+
+.edit-profile {
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 40px;
+    border-radius: 0.5rem;
+
+}
+
+@media only screen and (max-width: 575px) {
+    .emp-profile {
+        max-height: 100%;
+    }
+}
+
+.profile-img {
+    text-align: center;
+}
+
+.profile-img img {
+    width: 70%;
+    height: 100%;
+}
+
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+
+.profile-head h5 {
+    color: #333;
+}
+
+.profile-head h6 {
+    color: #0062cc;
+}
+
+.profile-edit-btn {
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+
+.proile-rating {
+    font-size: 12px;
+    color: #818182;
+    /* margin-top: 5%; */
+}
+
+.proile-rating span {
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
 @media only screen and (max-width: 991px) {
     .signin-header {
-        padding: 40px 30px
+        padding: 10px 0px
     }
 }
 
@@ -12401,6 +12572,12 @@ body.open .closeMask {
     .signin-header {
         padding: 30px;
         text-align: center
+    }
+
+    .header-sign {
+        background-color: var(--color-white);
+        color: white;
+        ;
     }
 }
 
@@ -12492,11 +12669,13 @@ body.open .closeMask {
 }
 
 .axil-signin-form-wrap {
-    width: 100%;
-    height: calc(100vh - 180px);
-    overflow-y: auto;
     display: flex;
-    margin: 180px -30px -30px
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    /* height: calc(100vh - 180px); */
+    overflow-y: auto;
+    /* margin: 180px -30px -30px */
 }
 
 @media only screen and (max-width: 991px) {
@@ -13729,18 +13908,19 @@ body.open .closeMask {
 }
 
 
-.sub-menu {
+/* .sub-menu {
     display: none;
-}
-.hoverx-btn:hover .sub-menu{
+} */
+/* .hoverx-btn:hover .sub-menu{
     display: block;
     
-}
+} */
 
 @media only screen and (max-width: 575px) {
     .copyright-default .quick-link li::after {
         display: none
     }
+
     .one-footer {
         display: none;
     }
